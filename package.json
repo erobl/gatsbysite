@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "erobldotxyz",
   "private": true,
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
@@ -10,12 +10,41 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
-    "gatsby": "^2.3.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "babel-plugin-styled": "0.0.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "bootstrap": "^4.3.1",
+    "gatsby": "^2.3.34",
+    "gatsby-cli": "^2.5.12",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.1",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-remark-autolink-headers": "^2.0.16",
+    "gatsby-remark-copy-linked-files": "^2.0.12",
+    "gatsby-remark-images": "^3.0.11",
+    "gatsby-remark-katex": "^3.0.4",
+    "gatsby-remark-prismjs": "^3.2.8",
+    "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-transformer-remark": "^2.3.12",
+    "i": "^0.3.6",
+    "katex": "^0.10.1",
+    "npm": "^6.9.0",
+    "prismjs": "^1.16.0",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-helmet": "^5.2.0",
+    "react-sidebar": "^3.0.2",
+    "reactstrap": "^7.1.0",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
