@@ -12,6 +12,17 @@ const Content = styled.div`
         font-family: "Fira Sans", sans-serif;
     }
 
+    a a:focus, a:hover, a:visited, a:link, a:active {
+        color: #000000;
+    }
+
+    a:hover {
+        color: #6d6d6d;
+    }
+
+    img {
+        width: 100%;
+    }
 `
 
 export default ({children}) => 

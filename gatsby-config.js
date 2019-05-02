@@ -41,6 +41,13 @@ module.exports = {
                     },
                     `gatsby-remark-autolink-headers`,
                     {
+                      resolve: 'gatsby-remark-graph',
+                      options: {
+                        language: 'mermaid',
+                        theme: 'default' // could also be dark, forest, or neutral
+                      }
+                    },
+                    {
                         resolve: `gatsby-remark-images`,
                         options: {
                             maxWidth: 590,

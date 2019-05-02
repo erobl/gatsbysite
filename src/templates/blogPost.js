@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 require(`katex/dist/katex.min.css`)
 require("prismjs/themes/prism-tomorrow.css")
 
+
 export default ({data}) => {
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
