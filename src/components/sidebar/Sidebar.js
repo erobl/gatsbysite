@@ -2,13 +2,20 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import TitleButton from "./TitleButton";
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faRssSquare } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faBars, fab)
+// workaround for loading
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
+
+
+library.add(faBars, fab, faRssSquare)
+
 
 const SideNav = styled.div`
-    background-color: #CCCCCC;
+    background-color: #eeeeee;
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;

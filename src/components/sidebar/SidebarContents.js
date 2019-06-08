@@ -14,6 +14,10 @@ const StyledLink = styled(Link)`
     font-size: 16pt;
 `
 
+const PaddedLink = styled.a`
+    padding: 0pt 12pt;
+`
+
 const SidebarLink = (props) => {
     return (
     <div style={{padding: "1em 0em"}}>
@@ -28,12 +32,15 @@ const Bio = () => {
             <div>
                 <Link to="/">Edgar Robles</Link>
             </div>
-            <a href="http://github.com/erobl/">
-                <FontAwesomeIcon icon={["fab", "github"]} style={{padding: "0pt 12pt"}} /> 
-            </a>
-            <a href="http://twitter.com/edgarobl">
-                <FontAwesomeIcon icon={["fab", "twitter"]} style={{padding: "0pt 12pt"}} /> 
-            </a>
+            <PaddedLink href="http://github.com/erobl/">
+                <FontAwesomeIcon icon={["fab", "github"]} />
+            </PaddedLink>
+            <PaddedLink href="http://twitter.com/edgarobl">
+                <FontAwesomeIcon icon={["fab", "twitter"]} />
+            </PaddedLink>
+            <PaddedLink href="http://erobl.xyz/blog/rss.xml">
+                <FontAwesomeIcon icon="rss-square" />
+            </PaddedLink>
         </div>
     </div>
 }

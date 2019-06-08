@@ -1,7 +1,7 @@
 ---
 path: "/blog/led-matrix-1"
 date: "2019-05-01"
-title: "Creating a smart LED matrix - Design and needed components"
+title: "Creating a smart LED matrix - Design and components"
 ---
 
 This will be the first in a series of blogposts which details how to create

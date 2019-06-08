@@ -1,4 +1,7 @@
 module.exports = {
+    siteMetadata: {
+        siteUrl: "https://erobl.xyz"
+    },
     plugins: [
         `gatsby-plugin-styled-components`,
         `gatsby-plugin-react-helmet`,
@@ -56,6 +59,64 @@ module.exports = {
                     `gatsby-remark-prismjs`, // needs to be after gatsby-autolink-headers
                     "gatsby-remark-copy-linked-files"
                 ],
+            }
+        },
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+                    {
+                      site {
+                        siteMetadata {
+                          siteUrl
+                        }
+                      }
+                    }
+                `,
+                feeds: [
+                    {
+                        query: `
+                            {
+                                allMarkdownRemark(
+                                    sort: {order: DESC, fields: [frontmatter___date]}
+                                ) {
+                                    edges { 
+                                        node {
+                                            frontmatter {
+                                                title
+                                                path
+                                                date
+                                            }
+                                            excerpt(pruneLength: 90)
+                                            html
+                                        }
+                                    }
+                                }
+                            }
+                        `,
+                        serialize: ({ query: { site, allMarkdownRemark } }) => {
+                            return allMarkdownRemark.edges.map(edge => {
+                                return Object.assign({}, edge.node.frontmatter, {
+                                    description: edge.node.excerpt,
+                                    date: edge.node.frontmatter.date,
+                                    url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                                    guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
+                                    custom_elements: [{"content:encoded": edge.node.html }]
+                                })
+                            })
+                        },
+                        output: "/blog/rss.xml",
+                        title: "Edgar Robles' blog"
+                    }
+                ]
+            }
+        },
+        {
+            resolve: `gatsby-plugin-gtag`,
+            options: {
+                trackingId: `UA-139647659-1`,
+                head: false,
+                anonymize: true,
             }
         }
     ]

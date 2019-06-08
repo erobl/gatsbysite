@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components"
 
 const Bar = styled.div`
-    background: #CCCCCC;
+    background: #eeeeee;
     width: 100%;
     margin: 0;
 
@@ -18,7 +18,7 @@ const Padding = styled.div`
 
 const burgStyle = {
     border: "none",
-    backgroundColor: "#BBBBBB",
+    backgroundColor: "#dedede",
     padding: "5px 10px",
     fontSize: "16pt"
 }

@@ -4,8 +4,9 @@ import Content from "../components/Content.js"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
+import BlogPaginator from "../components/BlogPaginator.js"
 
-export default ({data}) => {
+export default ({data, pageContext}) => {
     const { edges } = data.allMarkdownRemark
     return (
     <Layout>
@@ -27,15 +28,19 @@ export default ({data}) => {
                     </div>
                 )
             })}
+
+            <BlogPaginator currentPage={pageContext.currentPage} numPages={pageContext.numPages}/>
         </Content>
     </Layout>
     )
 }
 
 export const query = graphql`
-    query BlogQuery {
+    query BlogQuery($skip: Int!, $limit: Int!) {
         allMarkdownRemark(
-            sort: {order: DESC, fields: [frontmatter___date]}
+            sort: {order: DESC, fields: [frontmatter___date]},
+            limit: $limit,
+            skip: $skip
         ) {
             edges { 
                 node {
