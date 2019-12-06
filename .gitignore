@@ -70,3 +70,6 @@ yarn-error.log
 
 # vim stuff
 *.swp
+
+# node_modules of the plugins
+plugins/gatsby-transformer-bibtex/node_modules

@@ -29,6 +29,19 @@ module.exports = {
             }
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `bibtex`,
+                path: `${__dirname}/src/bibtex/`,
+                headers: {
+                    "/*.bib": [
+                        "Cache-Control: public, max-age=0, must-revalidate",
+                        "Content-Type: text/bibtex"
+                    ]
+                }
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 commonmark: true,
@@ -36,6 +49,17 @@ module.exports = {
                 pedantic: true,
                 gfm: true,
                 plugins: [
+                    {
+                        resolve: 'gatsby-remark-video',
+                        options: {
+                            width: 800,
+                            height: 'auto',
+                            preload: 'auto',
+                            muted: true,
+                            controls: true,
+                            autoplay: false
+                        }
+                    },
                     {
                         resolve: `gatsby-remark-katex`,
                         options: {
@@ -118,6 +142,7 @@ module.exports = {
                 head: false,
                 anonymize: true,
             }
-        }
+        },
+        "gatsby-transformer-bibtex"
     ]
 }
